@@ -30,7 +30,7 @@ This will be an easy task, when it come to this type of things, you often only n
   `   |   ||   &   &&   .   ;   -   <>   $    %0a 
 ```
 
-`ls` is a way googling about it
+\`ls\` is a way googling about it
 
 ### Level 2. Allow all characters but filted length.
 You will be restricted. <?`$_GET[c]` will be too long or system('cat flag_abcxyz') would be imposible
