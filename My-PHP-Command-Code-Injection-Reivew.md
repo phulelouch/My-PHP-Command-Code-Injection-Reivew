@@ -132,7 +132,9 @@ Also there is one more class that doing the same as execute function, but I coul
 Using get_defined_functions can help you more.
 
 If you really sure that all the function is filtered, try to understand this payload:
+```php
 $a=blag;$a{0}=f;111111111111111111111;?>
+```
 
 
 ### Level 5. Not allow alphabet and word
