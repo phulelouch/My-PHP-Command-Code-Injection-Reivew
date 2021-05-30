@@ -13,7 +13,7 @@ I will try and devide that filter into many level that you may meet. But first y
 ### 02. The method of identify
 If you know CTF you know that ASCII is not complete. With a preg_match identify what you can do to build the payload.
 
-```
+```php
 <?php
 	for ($ascii = 0; $ascii < 256; $ascii++) {
 		if (!preg_match("/^[a-zA-Z0-9 \s]+$/", chr($ascii))) { // input your preg_match
