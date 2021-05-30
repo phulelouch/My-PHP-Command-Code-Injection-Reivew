@@ -129,8 +129,10 @@ If Py try this maybe:
 
 ```
 Also there is one more class that doing the same as execute function, but I couldn't remember it.
+Using get_defined_functions can help you more.
 
-Using get_defined_functions can help you more 
+If you really sure that all the function is filtered, try to understand this payload:
+$a=blag;$a{0}=f;111111111111111111111;?>
 
 
 ### Level 5. Not allow alphabet and word
@@ -249,5 +251,4 @@ https://ctftime.org/writeup/15946
 Liveoverflow bash without letter:
 https://www.youtube.com/watch?v=6D1LnMj0Yt0
 
-$a=blag;$a{0}=f;111111111111111111111;?><?=$$a;?>
 
