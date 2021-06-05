@@ -137,7 +137,7 @@ $a=blag;$a{0}=f;111111111111111111111;?>
 ```
 
 
-### Level 5. Not allow alphabet and word
+### Level 5. Not allow alphabet and word (XOR now)
 This time the code on 02. The method of identify would be star. Identify what chars is allow then build the function up from there. 
 This time real bypass, the easiest way is using XOR of PHP
 
