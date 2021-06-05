@@ -37,6 +37,41 @@ You will be restricted. <?`$_GET[c]` will be too long or system('cat flag_abcxyz
 The idea of code injection would be write the command to a file first, then use sh filename to execute the script and get the shell
 or with the command injection `nl *` would be enough
 
+Sample of a challenge:
+```php
+<?php 
+show_source(__FILE__);
+$ip = isset($_POST['ip'])?$_POST['ip']:die();
+
+if(!preg_match('/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/i',$ip)){
+    die("ip");
+}
+
+echo strlen($ip);
+
+if(strlen($ip)<7||strlen($ip)>21){
+    die("ip");
+}
+
+    // Determine OS and execute the ping command.
+if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
+        // Windows
+        
+    $cmd = shell_exec( 'ping  ' .$ip );
+}else {
+        // *nix
+        $cmd = shell_exec( 'ping  -c 1 ' .$ip );
+}
+
+    // Feedback for the end user
+echo  "<pre>{$cmd}</pre>";
+
+
+
+
+
+```
+
 Sample of devide the command:
 
 ```python
